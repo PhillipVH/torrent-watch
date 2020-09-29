@@ -1,0 +1,14 @@
+<!doctype html>
+<title>Torrent Watch</title>
+<b>{{header}}</b>
+
+{% for torrent in torrents %}
+    <p>{{torrent}}</p>
+{% endfor %}
+
+<br/><br/>
+
+<form action="/add" method="POST">
+    <input name="url" type="text"/>
+    <button type="submit"> Add</button>
+</form>
