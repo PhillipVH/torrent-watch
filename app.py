@@ -7,8 +7,7 @@ app = Flask(__name__)
 scheduler = BackgroundScheduler()
 
 def run_shell(cmd):
-    result = subprocess.run(cmd, shell=True, capture_output=True, check=True).stdout.decode()
-    return result
+    return subprocess.run(cmd, shell=True, capture_output=True, check=True).stdout.decode()
 
 @scheduler.scheduled_job('cron', hour=00, minute=00)
 def start_torrents():
